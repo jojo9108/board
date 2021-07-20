@@ -68,13 +68,13 @@ public class Menu {
 		vo.setBoardId(sc.next());
 		sc.nextLine();
 		System.out.println("작성자 > ");
-		vo.setWriter(sc.next());
+		vo.setWriter(sc.nextLine());
 		sc.nextLine();
 		System.out.println("제목 > ");
-		vo.setTitle(sc.next());
+		vo.setTitle(sc.nextLine());
 		sc.nextLine();
 		System.out.println("내용 > ");
-		vo.setSubject(sc.next());	
+		vo.setSubject(sc.nextLine());	
 		int n = dao.boardInsert(vo);
 		if (n != 0) {
 			System.out.println("글 등록 완료");
@@ -100,5 +100,7 @@ public class Menu {
 
 	public void run() {
 		mainMenu();
+		sc.close();
+		
 	}
 }
